@@ -16,7 +16,7 @@ namespace ova.Common.Logging
 
         public string UserName { get; private set; }
         public string HostName { get { return StaticHostName; } }
-        public long _timestamp { get; private set; }
+        public long TimeStampUnix { get; private set; }
         public string Category { get; set; }
         public LogLevel Level { get; set; }
         public string Text { get; set; }

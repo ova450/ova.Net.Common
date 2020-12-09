@@ -23,7 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="FileLogger\fcq0z442.ada~" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
     <PackageReference Include="ova.Net.Common.UnixTime" Version="3.0.0.10" />
   </ItemGroup>
 

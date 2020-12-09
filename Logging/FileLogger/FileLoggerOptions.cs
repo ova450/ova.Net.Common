@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.Extensions.Logging;
 
-namespace ova.eCoin.Infrastructure.Service.Logging
+namespace ova.Common.Logging
 {
     public class FileLoggerOptions
     {
@@ -9,9 +9,7 @@ namespace ova.eCoin.Infrastructure.Service.Logging
         int fMaxFileSizeInMB;
         int fRetainPolicyFileCount;
 
-        public FileLoggerOptions()
-        {
-        }
+        public FileLoggerOptions() { }
 
         public LogLevel LogLevel { get; set; } = Microsoft.Extensions.Logging.LogLevel.Information;
 
