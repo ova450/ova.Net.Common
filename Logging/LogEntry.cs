@@ -1,18 +1,14 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ;
-using Microsoft.Extensions.Logging;
 
-namespace ova.eCoin.Infrastructure.Service.Logging
+namespace ova.Common.Logging
 {
     public class LogEntry
     {
         public LogEntry()
         {
-            long _timestamp = Common.UnixTime.Base.Timestamp(); //DateTime.UtcNow;
+            long _timestamp = UnixTime.Base.Timestamp(); //DateTime.UtcNow;
             UserName = Environment.UserName;
         }
 

@@ -2,9 +2,11 @@
 
   <PropertyGroup>
     <RootNamespace>UnixTimeXUnitTest</RootNamespace>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <Version>3.0.0.10</Version>
   </PropertyGroup>
 
   <ItemGroup>

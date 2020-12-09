@@ -1,12 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ova.eCoin.Infrastructure.Service.Logging
+namespace ova.Common.Logging.Abstract
 {
     public abstract class LoggerProvider : IDisposable, ILoggerProvider, ISupportExternalScope
     {

@@ -1,27 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>Common.UnixTime</RootNamespace>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>ova.NetCore.Common.UnixTime</AssemblyName>
+    <RootNamespace>ova.Common.UnixTime</RootNamespace>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>ova.Net.Common.UnixTime</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Product>UnixTime</Product>
     <Authors>ovaataaridotru</Authors>
     <Copyright>ovaataaridotru</Copyright>
-    <Version>2.2.3.9</Version>
+    <Version>3.0.0.10</Version>
     <Description>The package provides functionality for converting Coordinated Universal Time (UTC) to Unix Time and backward.</Description>
-    <RepositoryUrl>https://github.com/ova450/UnixTime</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/ova450/UnixTime</PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
+    <PackageProjectUrl></PackageProjectUrl>
     <PackageReleaseNotes>Release UnixTime 2.2.3.9 (little refactoring 2.1.2.5, 2.2.0.6, 2.2.1.7)
 Modules: Base, ToDate, UnixTime, UnixTimeComponents.
 UnitTests is OK: 5
 UnitTests isn't OK: 0</PackageReleaseNotes>
     <RepositoryType>GIT</RepositoryType>
     <PackageTags>Unix; time; date; timespan; timestamp</PackageTags>
-    <AssemblyVersion>2.2.1.7</AssemblyVersion>
-    <FileVersion>2.2.1.7</FileVersion>
+    <AssemblyVersion>3.0.0.10</AssemblyVersion>
+    <FileVersion>3.0.0.10</FileVersion>
   </PropertyGroup>
 
 </Project>

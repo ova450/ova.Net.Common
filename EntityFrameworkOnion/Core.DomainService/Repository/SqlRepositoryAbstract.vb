@@ -1,4 +1,4 @@
-﻿Imports Common.EntityFramework.Model
+﻿Imports ova.Common.EFOnion.Core.Domain
 
 Namespace Sql
 

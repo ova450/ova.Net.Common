@@ -1,4 +1,4 @@
-﻿Imports Common.EntityFramework.Model
+﻿Imports ova.Common.EFOnion.Core.Domain
 
 Public Interface IRepository(Of TEntity As {IEntityBase, Class}) '  where TEntity : Class //, New(Of)
 
