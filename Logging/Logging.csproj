@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>ova.net.eCoin.Infrastructure.Service.Logging</AssemblyName>
+    <RootNamespace>ova.eCoin.Infrastructure.Service.Logging</RootNamespace>
+    <Version>2.1.0.22</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>ovaataaridotru</Authors>
+    <Copyright>ovaataaridotru</Copyright>
+    <Product>eCoin.Infrastructure.Service.Logging</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Metanit\**" />
+    <EmbeddedResource Remove="Metanit\**" />
+    <None Remove="Metanit\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+    <PackageReference Include="ova.NetCore.Common.UnixTime" Version="2.2.3.9" />
+  </ItemGroup>
+
+</Project>

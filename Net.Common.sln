@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFrameworkOnion", "EntityFrameworkOnion", "{15DB2AC9-F1E5-440D-B54F-3A26F287D13A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{99193BBE-51D8-4FC7-981D-EF2953D829E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{0FF52DFB-50A7-460F-AE58-A07C9DFF9FA1}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Core.Domain", "EntityFrameworkOnion\Core.Domain\Core.Domain.vbproj", "{9555B376-C21C-4972-A88E-42E089F6F2FE}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Core.DomainService", "EntityFrameworkOnion\Core.DomainService\Core.DomainService.vbproj", "{EB0DC87A-21FB-484C-ABCF-A82971F60602}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9555B376-C21C-4972-A88E-42E089F6F2FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9555B376-C21C-4972-A88E-42E089F6F2FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9555B376-C21C-4972-A88E-42E089F6F2FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9555B376-C21C-4972-A88E-42E089F6F2FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB0DC87A-21FB-484C-ABCF-A82971F60602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0DC87A-21FB-484C-ABCF-A82971F60602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0DC87A-21FB-484C-ABCF-A82971F60602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0DC87A-21FB-484C-ABCF-A82971F60602}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9555B376-C21C-4972-A88E-42E089F6F2FE} = {15DB2AC9-F1E5-440D-B54F-3A26F287D13A}
+		{EB0DC87A-21FB-484C-ABCF-A82971F60602} = {15DB2AC9-F1E5-440D-B54F-3A26F287D13A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF299FD6-6CFC-4CC6-8A1F-C2B27E0B101D}
+	EndGlobalSection
+EndGlobal
