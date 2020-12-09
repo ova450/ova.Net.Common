@@ -1,5 +1,5 @@
 ﻿
-Imports ova.Common.OnionCore.Domain
+Imports ova.Common.Core.Domain
 
 Namespace DomainService
 
