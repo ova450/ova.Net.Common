@@ -1,5 +1,5 @@
 ﻿
-Namespace Navigation.Parent
+Namespace Domain.Navigation
 
     Public Interface INavigationParent(Of TParent)
         Property ParentId As Integer

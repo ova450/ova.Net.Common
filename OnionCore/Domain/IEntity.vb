@@ -1,6 +1,7 @@
 ﻿
+Namespace Domain
 
-Public Interface IEntity : Inherits IEntityBase
+    Public Interface IEntity : Inherits IEntityBase
         Property Name As String
     End Interface
 
@@ -8,3 +9,4 @@ Public Interface IEntity : Inherits IEntityBase
         Property Name As String
     End Interface
 
+End Namespace

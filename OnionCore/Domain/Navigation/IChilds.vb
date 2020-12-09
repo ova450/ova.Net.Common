@@ -1,5 +1,5 @@
 ﻿
-Namespace Navigation.Child
+Namespace Domain.Navigation
 
     Public Interface INavigationChild(Of TChild)
         Property Childs As HashSet(Of TChild)

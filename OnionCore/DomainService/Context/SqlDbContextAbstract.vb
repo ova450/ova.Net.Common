@@ -2,7 +2,7 @@ Imports System.Reflection
 Imports Microsoft.EntityFrameworkCore
 Imports Microsoft.Extensions.Configuration
 
-Namespace Sql
+Namespace DomainService.Sql
     Public MustInherit Class SqlDbContextAbstract : Inherits DbContext
 
         Private ReadOnly Property AppConfig As IConfiguration

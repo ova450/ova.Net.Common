@@ -5,7 +5,7 @@ Imports Microsoft.Extensions.Configuration
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 
-Namespace Json
+Namespace DomainService.Json
 
     ''' <example>
     ''' <code>
