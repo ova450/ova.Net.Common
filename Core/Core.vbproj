@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>ova.Common.OnionCore</RootNamespace>
+    <RootNamespace>ova.Common.Core</RootNamespace>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>ova.Net.Common.OnionCore</AssemblyName>
+    <AssemblyName>ova.Net.Common.Core</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>ovaataaridotru</Authors>
-    <Product>Common.OnionCore</Product>
+    <Product>OnionCore</Product>
     <Copyright>ovaataaridotru</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Version>3.1.0.16</Version>

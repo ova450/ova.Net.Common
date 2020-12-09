@@ -13,7 +13,7 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UnixTime.XUnitTest", "UnixT
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Hosting", "Hosting\Hosting.vbproj", "{6189504C-0F92-49E4-A4CA-90B67071DDBA}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OnionCore", "OnionCore\OnionCore.vbproj", "{8E28D4EB-44F4-4EDA-96FB-C3042F81226A}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Core", "Core\Core.vbproj", "{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{6189504C-0F92-49E4-A4CA-90B67071DDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6189504C-0F92-49E4-A4CA-90B67071DDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6189504C-0F92-49E4-A4CA-90B67071DDBA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8E28D4EB-44F4-4EDA-96FB-C3042F81226A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8E28D4EB-44F4-4EDA-96FB-C3042F81226A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8E28D4EB-44F4-4EDA-96FB-C3042F81226A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8E28D4EB-44F4-4EDA-96FB-C3042F81226A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
