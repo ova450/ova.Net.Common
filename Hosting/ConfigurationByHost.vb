@@ -47,5 +47,16 @@ Public Module ConfigurationByHost
 
     End Function
 
+    Public Delegate Sub Starter()
+
+    Public Async Sub HostInitAsync(args As String(), start As Starter)
+
+        Using host As IHost = CreateHostBuilder(args).Build()
+            Await host.StartAsync()
+            start()
+            Await host.StopAsync()
+        End Using
+    End Sub
+
 
 End Module

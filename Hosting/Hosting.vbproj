@@ -6,13 +6,11 @@
     <AssemblyName>ova.Net.Common.Hosting</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>3.0.0.23</Version>
+    <Version>3.1.2.26</Version>
     <Authors>ovaataaridotru</Authors>
     <Copyright>ovaataaridotru</Copyright>
     <Product>Hosting</Product>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <AssemblyVersion>3.0.0.23</AssemblyVersion>
-    <FileVersion>3.0.0.23</FileVersion>
     <PackageId>ova.Net.Common.Hosting</PackageId>
   </PropertyGroup>
 
