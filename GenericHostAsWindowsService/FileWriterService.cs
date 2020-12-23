@@ -8,7 +8,7 @@ namespace ova.Common.HostAsWindowsService
 {
     public class FileWriterService : IHostedService, IDisposable
     {
-        private const string Path = @"d:\TestApplication.txt";
+        private const string Path = @"d:\TestApp.txt";
 
         private Timer _timer;
 

@@ -33,5 +33,6 @@ Public Class AppLifetimeHostedService
         _logger.LogDebug("3. OnStopping has been called.") : End Sub
     Private Sub OnStopped()
         _logger.LogDebug("5. OnStopped has been called.") : End Sub
+
 End Class
 
