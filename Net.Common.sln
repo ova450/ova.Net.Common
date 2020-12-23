@@ -15,6 +15,10 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Hosting", "Hosting\Hosting.
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Core", "Core\Core.vbproj", "{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericHostAsWindowsService", "GenericHostAsWindowsService\GenericHostAsWindowsService.csproj", "{5CF78FCF-9DB9-4B6F-9C02-ADA14AD5FB0D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IHostedServiceAsAService", "IHostedServiceAsAService\IHostedServiceAsAService.csproj", "{C08F1048-3703-4247-BCCD-82C440443E6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,14 @@ Global
 		{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CF78FCF-9DB9-4B6F-9C02-ADA14AD5FB0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CF78FCF-9DB9-4B6F-9C02-ADA14AD5FB0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CF78FCF-9DB9-4B6F-9C02-ADA14AD5FB0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CF78FCF-9DB9-4B6F-9C02-ADA14AD5FB0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08F1048-3703-4247-BCCD-82C440443E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08F1048-3703-4247-BCCD-82C440443E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08F1048-3703-4247-BCCD-82C440443E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08F1048-3703-4247-BCCD-82C440443E6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,31 +10,15 @@ namespace ova.Common.Logging.Abstract
         IExternalScopeProvider fScopeProvider;
         protected IDisposable SettingsChangeToken;
 
-        void ISupportExternalScope.SetScopeProvider(IExternalScopeProvider scopeProvider)
-        {
-            fScopeProvider = scopeProvider;
-        }
+        void ISupportExternalScope.SetScopeProvider(IExternalScopeProvider scopeProvider) { fScopeProvider = scopeProvider; }
 
-        ILogger ILoggerProvider.CreateLogger(string Category)
-        {
-            return loggers.GetOrAdd(Category,
-            (category) =>
-            {
-                return new Logger(this, category);
-            });
-        }
+        ILogger ILoggerProvider.CreateLogger(string Category) { return loggers.GetOrAdd(Category, (category) => { return new Logger(this, category); }); }
 
         void IDisposable.Dispose()
         {
             if (!this.IsDisposed)
             {
-                try
-                {
-                    Dispose(true);
-                }
-                catch
-                {
-                }
+                try { Dispose(true); } catch { }
 
                 this.IsDisposed = true;
                 GC.SuppressFinalize(this);  // instructs GC not bother to call the destructor   
@@ -55,12 +39,7 @@ namespace ova.Common.Logging.Abstract
         }
 
         ~LoggerProvider()
-        {
-            if (!this.IsDisposed)
-            {
-                Dispose(false);
-            }
-        }
+        { if (!this.IsDisposed) { Dispose(false); } }
 
         public abstract bool IsEnabled(LogLevel logLevel);
 
@@ -70,12 +49,11 @@ namespace ova.Common.Logging.Abstract
         {
             get
             {
-                if (fScopeProvider == null)
-                    fScopeProvider = new LoggerExternalScopeProvider();
+                if (fScopeProvider == null) fScopeProvider = new LoggerExternalScopeProvider();
                 return fScopeProvider;
             }
         }
 
         public bool IsDisposed { get; protected set; }
     }
-}
+} 

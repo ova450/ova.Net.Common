@@ -35,10 +35,7 @@ namespace ova.Common.Logging
                 Info.State = state;
 
                 // well, you never know what it really is
-                if (state is string)
-                {
-                    Info.StateText = state.ToString();
-                }
+                if (state is string) { Info.StateText = state.ToString(); }
                 // in case we have to do with a message template, 
                 // let's get the keys and values (for Structured Logging providers)
                 // SEE: https://docs.microsoft.com/en-us/aspnet/core/

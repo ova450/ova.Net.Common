@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.Extensions.Logging;
 
-namespace ova.Common.Logging
+namespace ova.Common.Logging.FileLogger
 {
     public class FileLoggerOptions
     {

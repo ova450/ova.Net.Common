@@ -3,6 +3,7 @@ Imports Microsoft.Extensions.Configuration
 Imports Microsoft.Extensions.DependencyInjection
 Imports Microsoft.Extensions.Hosting
 Imports Microsoft.Extensions.Logging
+Imports ova.Common.Logging.FileLogger
 
 Public Module ConfigurationByHost
 
@@ -27,6 +28,8 @@ Public Module ConfigurationByHost
                                           End Sub).
                 ConfigureLogging(Sub(hostContext, configLogging)
                                      With configLogging
+                                         .ClearProviders()
+                                         .AddFileLogger(Sub(options) options.MaxFileSizeInMB = 5)
                                          .AddConsole()
                                          .AddDebug()
                                      End With
@@ -46,17 +49,5 @@ Public Module ConfigurationByHost
         End Try
 
     End Function
-
-    Public Delegate Sub Starter()
-
-    Public Async Sub HostInitAsync(args As String(), start As Starter)
-
-        Using host As IHost = CreateHostBuilder(args).Build()
-            Await host.StartAsync()
-            start()
-            Await host.StopAsync()
-        End Using
-    End Sub
-
 
 End Module

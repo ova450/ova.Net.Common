@@ -8,7 +8,7 @@ namespace ova.Common.Logging
     {
         public LogEntry()
         {
-            long _timestamp = UnixTime.Base.Timestamp(); //DateTime.UtcNow;
+            TimeStampUnix = UnixTime.Base.Timestamp(); //DateTime.UtcNow;
             UserName = Environment.UserName;
         }
 

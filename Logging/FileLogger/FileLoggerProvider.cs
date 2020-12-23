@@ -11,9 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ova.Common.UnixTime;
 
-namespace ova.Common.Logging
+namespace ova.Common.Logging.FileLogger
 {
-
     //[Microsoft.Extensions.Logging.ProviderAlias("File")]
     public class FileLoggerProvider : LoggerProvider
     {
