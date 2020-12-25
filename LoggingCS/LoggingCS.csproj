@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>ova.Net.Common.Logging</AssemblyName>
     <RootNamespace>ova.Common.Logging</RootNamespace>
-    <Version>3.0.0.24</Version>
+    <Version>3.0.1.25</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>ovaataaridotru</Authors>

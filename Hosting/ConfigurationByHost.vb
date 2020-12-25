@@ -29,7 +29,10 @@ Public Module ConfigurationByHost
                 ConfigureLogging(Sub(hostContext, configLogging)
                                      With configLogging
                                          .ClearProviders()
-                                         .AddFileLogger(Sub(options) options.MaxFileSizeInMB = 5)
+                                         .AddFileLogger(Sub(options)
+                                                            options.MaxFileSizeInMB = 5
+                                                            options.LogLevel = LogLevel.Information
+                                                        End Sub)
                                          .AddConsole()
                                          .AddDebug()
                                      End With

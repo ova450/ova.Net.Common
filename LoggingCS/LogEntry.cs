@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using static ova.Common.UnixTime.Base;
+using ova.Common.UnixTime;
 
 namespace ova.Common.Logging
 {
@@ -8,7 +10,8 @@ namespace ova.Common.Logging
     {
         public LogEntry()
         {
-            TimeStampUnix = UnixTime.Base.Timestamp(); //DateTime.UtcNow;
+            TimeStampUnix = Timestamp(); //DateTime.UtcNow;
+            Console.WriteLine($"UnixTime: {TimeStampUnix}, UnixUTC{Date.FromTimestamp(TimeStampUnix).Date}");
             UserName = Environment.UserName;
         }
 

@@ -106,11 +106,11 @@ namespace ova.Common.Logging.FileLogger
             {
                 string S;
                 StringBuilder SB = new StringBuilder(); //
-                SB.Append(Pad(Date.FromTimestamp(Info.TimeStampUnix).ToLocalTime().ToString("yyyy-MM-dd HH:mm:ss.ff"), Lengths["Time"]));
+                SB.Append(Pad(DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.ff"), Lengths["Time"]));
                 SB.Append(Pad(Info.HostName, Lengths["Host"]));
                 SB.Append(Pad(Info.UserName, Lengths["User"]));
                 SB.Append(Pad(Info.Level.ToString(), Lengths["Level"]));
-                SB.Append(Pad(Info.EventId != null ? Info.EventId.ToString() : "", Lengths["EventId"]));
+                SB.Append(Pad(Info.EventId.ToString(), Lengths["EventId"]));
                 SB.Append(Pad(Info.Category, Lengths["Category"]));
 
                 S = "";
@@ -148,7 +148,7 @@ namespace ova.Common.Logging.FileLogger
                         WriteLogLine();
                         System.Threading.Thread.Sleep(100);
                     }
-                    catch { }
+                    catch { } 
                 }
             });
         }

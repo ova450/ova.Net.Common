@@ -6,7 +6,7 @@
     <AssemblyName>ova.Net.Common.Hosting</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>3.3.4.36</Version>
+    <Version>4.1.5.47</Version>
     <Authors>ovaataaridotru</Authors>
     <Copyright>ovaataaridotru</Copyright>
     <Product>Hosting</Product>
@@ -17,7 +17,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
-    <PackageReference Include="ova.Net.Common.Logging" Version="3.0.0.24" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+    <PackageReference Include="ova.net.Common.Logging" Version="4.3.3.34" />
+    <PackageReference Include="ova.Net.Common.UnixTime" Version="3.0.0.10" />
   </ItemGroup>
 
   <ItemGroup>
