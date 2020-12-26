@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>DbJsonFileTestConsole</RootNamespace>
+    <TargetFramework>net5.0</TargetFramework>
+    <StartupObject>Sub Main</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AppDbContext.vb~RFf5b62b1.TMP" />
+    <None Remove="Person.vb~RFf447fbe.TMP" />
+    <None Remove="Person.vb~RFf477204.TMP" />
+    <None Remove="Person.vb~RFf4a0b0e.TMP" />
+    <None Remove="Program.vb~RFf678cd4.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DbJsonFile\DbJsonFile.csproj" />
+  </ItemGroup>
+
+</Project>
