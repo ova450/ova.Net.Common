@@ -21,16 +21,6 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FileLogging", "FileLogging\
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DbLogging", "DbLogging\DbLogging.vbproj", "{93A7BCA9-F8F4-43EF-ABFB-4B16F1688E15}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JsonDatabase", "JsonDatabase", "{F1D27D75-4721-4425-878F-50C18E71BF4F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbJsonFile", "DbJson\DbJsonFile\DbJsonFile.csproj", "{364F0ED6-CCCA-40A2-A90A-194BBD1854FA}"
-EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DbJsonFileTestConsole", "DbJson\DbJsonFileTestConsole\DbJsonFileTestConsole.vbproj", "{41B44117-6E45-4D55-B1E3-ECA750BA3F63}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JsonFileDatabaseGroup", "JsonFileDatabaseGroup", "{BF64B587-3618-4ECC-8CA8-F7B279ED51EB}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "JsonFileDatabase", "JsonFileDatabaseGroup\JsonFileDatabase\JsonFileDatabase.vbproj", "{39EB281B-609B-45D5-9677-4079B5917C71}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,18 +59,6 @@ Global
 		{93A7BCA9-F8F4-43EF-ABFB-4B16F1688E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93A7BCA9-F8F4-43EF-ABFB-4B16F1688E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93A7BCA9-F8F4-43EF-ABFB-4B16F1688E15}.Release|Any CPU.Build.0 = Release|Any CPU
-		{364F0ED6-CCCA-40A2-A90A-194BBD1854FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{364F0ED6-CCCA-40A2-A90A-194BBD1854FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{364F0ED6-CCCA-40A2-A90A-194BBD1854FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{364F0ED6-CCCA-40A2-A90A-194BBD1854FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{41B44117-6E45-4D55-B1E3-ECA750BA3F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41B44117-6E45-4D55-B1E3-ECA750BA3F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{41B44117-6E45-4D55-B1E3-ECA750BA3F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{41B44117-6E45-4D55-B1E3-ECA750BA3F63}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39EB281B-609B-45D5-9677-4079B5917C71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39EB281B-609B-45D5-9677-4079B5917C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39EB281B-609B-45D5-9677-4079B5917C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39EB281B-609B-45D5-9677-4079B5917C71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,9 +66,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0C6B1E07-0A5A-4521-AE60-BC8462A38579} = {0FF52DFB-50A7-460F-AE58-A07C9DFF9FA1}
 		{7CD4D3C4-EB4F-42AB-B794-2B06D5D4E151} = {0FF52DFB-50A7-460F-AE58-A07C9DFF9FA1}
-		{364F0ED6-CCCA-40A2-A90A-194BBD1854FA} = {F1D27D75-4721-4425-878F-50C18E71BF4F}
-		{41B44117-6E45-4D55-B1E3-ECA750BA3F63} = {F1D27D75-4721-4425-878F-50C18E71BF4F}
-		{39EB281B-609B-45D5-9677-4079B5917C71} = {BF64B587-3618-4ECC-8CA8-F7B279ED51EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF299FD6-6CFC-4CC6-8A1F-C2B27E0B101D}
