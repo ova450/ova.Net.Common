@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CoreSqlDatabaseTestingConsole</RootNamespace>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="EntityConfigAbstract.vb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Interfaces.vb~RF2f73e0ef.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ova.Net.Common.EntityFramework.Onion.Core" Version="4.1.0.24" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.vbproj" />
+  </ItemGroup>
+
+</Project>

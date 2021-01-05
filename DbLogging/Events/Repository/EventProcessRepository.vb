@@ -2,9 +2,10 @@
 Imports ova.Common.DbLogging.Events
 Imports ova.Common.DbLogging.Events.Model
 
-Public Class EventObjectRepository : Inherits RepositoryAbstract(Of EventObject)
+Public Class EventProcessRepository : Inherits RepositoryAbstract(Of EventProcess)
+
     Sub New(databasecontext As EventDbContext)
-        MyBase.New(databasecontext)
+        DbContext = databasecontext
     End Sub
 
 End Class

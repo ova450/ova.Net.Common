@@ -1,6 +1,8 @@
 ﻿Imports ova.Common.Core.Domain.Navigation
+Imports ova.Common.SqlDbLoggingEvents.Model
+Imports ova.Common.SqlDbLoggingEvents.Model.Abstract
 
-Namespace Events.Model
+Namespace Model
 
     Public Class EventProcess : Inherits EventElementAbstract : Implements INavigationChild(Of EventFullElement)
 

@@ -1,5 +1,5 @@
 ﻿
-Namespace Domain
+Namespace Domain.Model
 
     Public Interface IEntityTimingBase : Inherits IEntityBase
         ReadOnly Property Timestamp As Long

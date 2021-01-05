@@ -1,5 +1,5 @@
 ﻿
-Namespace Domain
+Namespace Domain.Model
 
     Public Interface IEntityTiming : Inherits IEntityTimingBase
         Property Name As String

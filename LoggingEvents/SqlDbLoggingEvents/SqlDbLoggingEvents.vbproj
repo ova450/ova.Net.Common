@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>ova.Common.SqlDbLoggingEvents</RootNamespace>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>ova.Net.Common.SqlDbLoggingEvents</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>1.0.0.1</Version>
+    <Authors>ovaataaridotru</Authors>
+    <Copyright>ovaataaridotru</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Product>SqlDbLoggingEvents</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Abstract\EventElementAbstract.vb~RF1a5ae708.TMP" />
+    <None Remove="Model\EventObject.vb~RF1a64ea72.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ova.Net.Common.Core" Version="3.2.0.18" />
+  </ItemGroup>
+
+</Project>

@@ -11,8 +11,6 @@ Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "UnixTime.XUnitTest", "UnixT
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Hosting", "Hosting\Hosting.vbproj", "{6189504C-0F92-49E4-A4CA-90B67071DDBA}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Core", "Core\Core.vbproj", "{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericHostAsWindowsService", "GenericHostAsWindowsService\GenericHostAsWindowsService.csproj", "{5CF78FCF-9DB9-4B6F-9C02-ADA14AD5FB0D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppInfrasructureCheckin", "ConsoleAppInfrasructureCheckin\ConsoleAppInfrasructureCheckin.csproj", "{3CC13180-6121-49BA-8BCA-2769DA15BEEF}"
@@ -20,6 +18,18 @@ EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "FileLogging", "FileLogging\FileLogging.vbproj", "{DF52B6B4-E1E2-4F77-A05D-028B9B1988B5}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DbLogging", "DbLogging\DbLogging.vbproj", "{93A7BCA9-F8F4-43EF-ABFB-4B16F1688E15}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LoggingEvents", "LoggingEvents", "{62F164F6-0B6A-47C9-837C-FD5E64366AC5}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SqlDbLoggingEvents", "LoggingEvents\SqlDbLoggingEvents\SqlDbLoggingEvents.vbproj", "{F51B979A-DD9E-4DCB-BAEC-00BD60580090}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "SqlDbLoggingEventsTest", "LoggingEvents\SqlDbLoggingEventsTest\SqlDbLoggingEventsTest.vbproj", "{48601FCA-4FAF-4728-8B19-6FC2249B77F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OnionCore", "OnionCore", "{289D8847-A27C-4D94-B1AD-E04EA5AADB49}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Core", "OnionCore\Core\Core.vbproj", "{2BEACBBF-64F8-4497-9CDB-1278F49AA36D}"
+EndProject
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "CoreSqlDatabaseTestingConsole", "OnionCore\CoreSqlDatabaseTestingConsole\CoreSqlDatabaseTestingConsole.vbproj", "{B980B716-FF63-46BF-A062-59C98911957D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +49,6 @@ Global
 		{6189504C-0F92-49E4-A4CA-90B67071DDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6189504C-0F92-49E4-A4CA-90B67071DDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6189504C-0F92-49E4-A4CA-90B67071DDBA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27D5CC4C-DE29-4D9C-A76A-DA93C492E3EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5CF78FCF-9DB9-4B6F-9C02-ADA14AD5FB0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5CF78FCF-9DB9-4B6F-9C02-ADA14AD5FB0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CF78FCF-9DB9-4B6F-9C02-ADA14AD5FB0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,6 +65,22 @@ Global
 		{93A7BCA9-F8F4-43EF-ABFB-4B16F1688E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93A7BCA9-F8F4-43EF-ABFB-4B16F1688E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93A7BCA9-F8F4-43EF-ABFB-4B16F1688E15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F51B979A-DD9E-4DCB-BAEC-00BD60580090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F51B979A-DD9E-4DCB-BAEC-00BD60580090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F51B979A-DD9E-4DCB-BAEC-00BD60580090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F51B979A-DD9E-4DCB-BAEC-00BD60580090}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48601FCA-4FAF-4728-8B19-6FC2249B77F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48601FCA-4FAF-4728-8B19-6FC2249B77F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48601FCA-4FAF-4728-8B19-6FC2249B77F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48601FCA-4FAF-4728-8B19-6FC2249B77F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BEACBBF-64F8-4497-9CDB-1278F49AA36D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BEACBBF-64F8-4497-9CDB-1278F49AA36D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BEACBBF-64F8-4497-9CDB-1278F49AA36D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BEACBBF-64F8-4497-9CDB-1278F49AA36D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B980B716-FF63-46BF-A062-59C98911957D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B980B716-FF63-46BF-A062-59C98911957D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B980B716-FF63-46BF-A062-59C98911957D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B980B716-FF63-46BF-A062-59C98911957D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +88,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0C6B1E07-0A5A-4521-AE60-BC8462A38579} = {0FF52DFB-50A7-460F-AE58-A07C9DFF9FA1}
 		{7CD4D3C4-EB4F-42AB-B794-2B06D5D4E151} = {0FF52DFB-50A7-460F-AE58-A07C9DFF9FA1}
+		{F51B979A-DD9E-4DCB-BAEC-00BD60580090} = {62F164F6-0B6A-47C9-837C-FD5E64366AC5}
+		{48601FCA-4FAF-4728-8B19-6FC2249B77F3} = {62F164F6-0B6A-47C9-837C-FD5E64366AC5}
+		{2BEACBBF-64F8-4497-9CDB-1278F49AA36D} = {289D8847-A27C-4D94-B1AD-E04EA5AADB49}
+		{B980B716-FF63-46BF-A062-59C98911957D} = {289D8847-A27C-4D94-B1AD-E04EA5AADB49}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF299FD6-6CFC-4CC6-8A1F-C2B27E0B101D}

@@ -2,7 +2,7 @@
 
 Namespace DomainService.Json
 
-    Public Class JsonRepositoryAbstract(Of TEntity As {IEntityBase, Class}) : Implements IRepository(Of IEntityBase)
+    Public Class JsonRepositoryAbstract(Of TEntity As {IEntityBase, Class}) : Implements IRepositoryQueryable(Of IEntityBase)
 
         Protected ReadOnly SqlContext As JsonDbContextAbstract
 
@@ -10,32 +10,32 @@ Namespace DomainService.Json
             SqlContext = context
         End Sub
 
-        Public Function GetAll() As IQueryable(Of IEntityBase) Implements IRepository(Of IEntityBase).GetAll
+        Public Function GetAll() As IQueryable(Of IEntityBase) Implements IRepositoryQueryable(Of IEntityBase).GetAll
             Try
                 Return SqlContext.Set(Of TEntity)
             Catch ex As Exception : Throw New Exception($"Couldn't retrieve entities: {ex.Message}")
             End Try
         End Function
 
-        Public Function Count() As Long Implements IRepository(Of IEntityBase).Count
+        Public Function Count() As Long Implements IRepositoryQueryable(Of IEntityBase).Count
             Return GetAll.Count
         End Function
 
-        Public Function [Get](id As Integer) As IEntityBase Implements IRepository(Of IEntityBase).Get
+        Public Function [Get](id As Integer) As IEntityBase Implements IRepositoryQueryable(Of IEntityBase).Get
             Try
                 Return GetAll.First(Function(x) x.Id = id)
             Catch ex As Exception : Throw New Exception($"Couldn't retrieve entity by id={id}: {ex.Message}")
             End Try
         End Function
 
-        Public Async Function GetAsync(id As Integer) As Task(Of IEntityBase) Implements IRepository(Of IEntityBase).GetAsync
+        Public Async Function GetAsync(id As Integer) As Task(Of IEntityBase) Implements IRepositoryQueryable(Of IEntityBase).GetAsync
             Try
                 Return Await SqlContext.FindAsync(Of TEntity)(Function(x) x.id = id)
             Catch ex As Exception : Throw New Exception($"Couldn't retrieve entity by id={id}: {ex.Message}")
             End Try
         End Function
 
-        Public Function Add(entity As IEntityBase) As IEntityBase Implements IRepository(Of IEntityBase).Add
+        Public Function Add(entity As IEntityBase) As IEntityBase Implements IRepositoryQueryable(Of IEntityBase).Add
             Try
                 With SqlContext
                     .Add(entity)
@@ -46,7 +46,7 @@ Namespace DomainService.Json
             End Try
         End Function
 
-        Public Async Function AddAsync(entity As IEntityBase) As Task(Of IEntityBase) Implements IRepository(Of IEntityBase).AddAsync
+        Public Async Function AddAsync(entity As IEntityBase) As Task(Of IEntityBase) Implements IRepositoryQueryable(Of IEntityBase).AddAsync
             Try
                 With SqlContext
                     Await .AddAsync(entity)
@@ -57,14 +57,14 @@ Namespace DomainService.Json
             End Try
         End Function
 
-        Public Function Remove(id As Integer) As IEntityBase Implements IRepository(Of IEntityBase).Remove
+        Public Function Remove(id As Integer) As IEntityBase Implements IRepositoryQueryable(Of IEntityBase).Remove
             Try
                 Return Remove([Get](id))
             Catch ex As Exception : Throw New Exception($"Failed to remove object: {ex.Message}")
             End Try
         End Function
 
-        Public Function Remove(entity As IEntityBase) As IEntityBase Implements IRepository(Of IEntityBase).Remove
+        Public Function Remove(entity As IEntityBase) As IEntityBase Implements IRepositoryQueryable(Of IEntityBase).Remove
             Try
                 With SqlContext
                     .Remove(entity)
@@ -75,14 +75,14 @@ Namespace DomainService.Json
             End Try
         End Function
 
-        Public Async Function RemoveAsync(id As Integer) As Task(Of IEntityBase) Implements IRepository(Of IEntityBase).RemoveAsync
+        Public Async Function RemoveAsync(id As Integer) As Task(Of IEntityBase) Implements IRepositoryQueryable(Of IEntityBase).RemoveAsync
             Try
                 Return Await RemoveAsync([Get](id))
             Catch ex As Exception : Throw New Exception($"Failed to remove object: {ex.Message}")
             End Try
         End Function
 
-        Public Async Function RemoveAsync(entity As IEntityBase) As Task(Of IEntityBase) Implements IRepository(Of IEntityBase).RemoveAsync
+        Public Async Function RemoveAsync(entity As IEntityBase) As Task(Of IEntityBase) Implements IRepositoryQueryable(Of IEntityBase).RemoveAsync
             Try
                 With SqlContext
                     .Remove(entity)
@@ -93,7 +93,7 @@ Namespace DomainService.Json
             End Try
         End Function
 
-        Public Function Update(entity As IEntityBase) As IEntityBase Implements IRepository(Of IEntityBase).Update
+        Public Function Update(entity As IEntityBase) As IEntityBase Implements IRepositoryQueryable(Of IEntityBase).Update
             Try
                 With SqlContext
                     .Update(entity)
@@ -104,7 +104,7 @@ Namespace DomainService.Json
             End Try
         End Function
 
-        Public Async Function UpdateAsync(entity As IEntityBase) As Task(Of IEntityBase) Implements IRepository(Of IEntityBase).UpdateAsync
+        Public Async Function UpdateAsync(entity As IEntityBase) As Task(Of IEntityBase) Implements IRepositoryQueryable(Of IEntityBase).UpdateAsync
             Try
                 With SqlContext
                     .Update(entity)

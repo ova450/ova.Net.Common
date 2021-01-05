@@ -1,5 +1,5 @@
 ﻿
-Namespace Domain
+Namespace Domain.Model
 
     Public Interface IEntityBase
         Property Id As Integer

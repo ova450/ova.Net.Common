@@ -1,5 +1,5 @@
 ﻿
-Namespace Domain
+Namespace Domain.Model
 
     Public Interface IEntity : Inherits IEntityBase
         Property Name As String
