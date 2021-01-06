@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.vbproj" />
+    <ProjectReference Include="..\Model1\Model1.vbproj" />
+    <ProjectReference Include="..\Model2\Model2.vbproj" />
   </ItemGroup>
 
 </Project>
