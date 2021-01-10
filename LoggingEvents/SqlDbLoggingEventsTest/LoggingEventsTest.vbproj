@@ -3,7 +3,11 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <RootNamespace>SqlDbLoggingEventsTest</RootNamespace>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SqlDbLoggingEvents\LogEvents.vbproj" />
+  </ItemGroup>
 
 </Project>

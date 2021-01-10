@@ -6,7 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="initial\Class11Initial.json~RF129b566d.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Core\Core.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="initial\Class11Initial.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -10,11 +10,11 @@
     <Product>OnionCore</Product>
     <Copyright>ovaataaridotru</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>4.2.0.25</Version>
+    <Version>4.4.0.29</Version>
     <Description>This package is designed to help you easily get started developing a new NET 5.0 application. The package includes basic abstractions for implementing EntityFramework in Onion architecture: Entity interfaces group in Core.Domain.Model namespace, two interface groups in Core.Domain.Navigation namespace, IRepository interface in Core.DomainService.Repository namespace, abctract classes DbContext and  EntityConfig in the Core.DomainService.SqlService and also interface IService in Core.AppService namespace.</Description>
     <PackageTags>EntityFramework; Onion; Sql; Repository; service; DbContext;</PackageTags>
     <RepositoryType>GitHub</RepositoryType>
-    <PackageReleaseNotes>Release</PackageReleaseNotes>
+    <PackageReleaseNotes>Release. Refactoring the entity initialization algorithm.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

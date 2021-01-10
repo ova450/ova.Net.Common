@@ -1,5 +1,8 @@
 ﻿Imports System.IO
 Imports System.Runtime.Serialization.Json
+Imports System.Text
+Imports System.Text.Json
+Imports System.Xml
 Imports Microsoft.EntityFrameworkCore
 Imports Microsoft.EntityFrameworkCore.Metadata.Builders
 Imports ova.Common.Core.Domain.Model
@@ -23,18 +26,14 @@ Namespace DomainService.SqlService
 
         Public MustOverride Sub Relations(builder As EntityTypeBuilder(Of T))
 
-        Public Overridable Sub InitialFromJson(builder As EntityTypeBuilder(Of T), Optional subdirectory As String = "entities", Optional suffix As String = "Initial", Optional filenameextension As String = "json")
-            Dim fn As String = $"{AppDomain.CurrentDomain.BaseDirectory}{subdirectory}/{GetType(T).Name}{suffix }.{filenameextension}"
-            Dim Items As T() = Array.Empty(Of T)()
-            Dim JsonFormatter As DataContractJsonSerializer = New DataContractJsonSerializer(Items.GetType)
-            If File.Exists(fn) Then
-                Dim fs As FileStream = New FileStream(fn, FileMode.OpenOrCreate)
-                Using (fs)
-                    Dim json = JsonFormatter.ReadObject(fs)
-                    Items = json
-                    builder.HasData(Items)
-                End Using
-            End If
+        Public Overridable Async Sub InitialFromJson(builder As EntityTypeBuilder(Of T), Optional subdirectory As String = "initial", Optional suffix As String = "Initial", Optional filenameextension As String = "json")
+            Dim fn As String = $"{AppDomain.CurrentDomain.BaseDirectory}{subdirectory}\{GetType(T).Name}{suffix }.{filenameextension}"
+            fn = fn.Replace("/", "\")
+            If Not File.Exists(fn) Then Exit Sub
+            Using fs As FileStream = New FileStream(fn, FileMode.OpenOrCreate)
+                Dim Items As T() = Await JsonSerializer.DeserializeAsync(Of T())(fs)
+                builder.HasData(Items)
+            End Using
         End Sub
 
     End Class
