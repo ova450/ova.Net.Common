@@ -1,8 +1,5 @@
 ﻿Imports System.IO
-Imports System.Runtime.Serialization.Json
-Imports System.Text
 Imports System.Text.Json
-Imports System.Xml
 Imports Microsoft.EntityFrameworkCore
 Imports Microsoft.EntityFrameworkCore.Metadata.Builders
 Imports ova.Common.Core.Domain.Model
@@ -13,8 +10,6 @@ Namespace DomainService.SqlService
 
         Private ReadOnly PrimaryKeys() As String = {"Id"}
 
-        Public Sub New() : End Sub
-
         Public Sub New(ParamArray primarykeys() As String)
             Me.PrimaryKeys.Union(primarykeys)
         End Sub
@@ -24,17 +19,34 @@ Namespace DomainService.SqlService
             InitialFromJson(builder)
         End Sub
 
-        Public MustOverride Sub Relations(builder As EntityTypeBuilder(Of T))
+        Public Overridable Sub Relations(builder As EntityTypeBuilder(Of T))
+        End Sub
 
         Public Overridable Async Sub InitialFromJson(builder As EntityTypeBuilder(Of T), Optional subdirectory As String = "initial", Optional suffix As String = "Initial", Optional filenameextension As String = "json")
             Dim fn As String = $"{AppDomain.CurrentDomain.BaseDirectory}{subdirectory}\{GetType(T).Name}{suffix }.{filenameextension}"
             fn = fn.Replace("/", "\")
-            If Not File.Exists(fn) Then Exit Sub
+            If Not File.Exists(fn) Then
+                RaiseEvent FileNotFound(Me, fn, Nothing)
+                Exit Sub
+            End If
             Using fs As FileStream = New FileStream(fn, FileMode.OpenOrCreate)
-                Dim Items As T() = Await JsonSerializer.DeserializeAsync(Of T())(fs)
-                builder.HasData(Items)
+                Dim Items As T()
+                Try
+                    Items = Await JsonSerializer.DeserializeAsync(Of T())(fs)
+                    builder.HasData(Items)
+                Catch ex As Exception
+                    Items = Nothing
+                    RaiseEvent FileIsIncorrect(Me, fn, ex)
+                End Try
             End Using
         End Sub
 
+
+        Delegate Sub FileIsIncorrectEventHandler(sender As Object, filename As String, innerexception As JsonException)
+        Delegate Sub FileNotFoundEventHandler(sender As Object, filename As String, innerexception As FileNotFoundException)
+        Public Event FileNotFound As FileNotFoundEventHandler
+        Public Event FileIsIncorrect As FileIsIncorrectEventHandler
+
     End Class
+
 End Namespace

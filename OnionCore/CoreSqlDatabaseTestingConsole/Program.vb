@@ -1,9 +1,4 @@
-Imports System
-Imports System.Reflection
-Imports Microsoft.EntityFrameworkCore
 Imports Model1
-Imports Model2
-Imports ova.Common.Core.DomainService.SqlService
 
 Module Program
     Sub Main(args As String())

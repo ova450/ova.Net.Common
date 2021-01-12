@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>ova.Common.Logging.Events</RootNamespace>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>ova.Net.Common.Logging.Events</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>1.0.1.2</Version>
+    <Authors>ovaataaridotru</Authors>
+    <Copyright>ovaataaridotru</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Product>Logging.Events</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ova.Net.Common.EntityFramework.Onion.Core" Version="4.4.10.39" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="initial\EventObjectInitial.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="initial\EventObjectInstall.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="initial\EventProcessInitial.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="initial\EventProcessInstall.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="initial\EventStageInitial.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="initial\EventStagetInstall.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

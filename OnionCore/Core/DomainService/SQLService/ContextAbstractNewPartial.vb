@@ -5,7 +5,7 @@ Imports Microsoft.EntityFrameworkCore
 
 Namespace DomainService.SqlService
 
-    Partial Public MustInherit Class DbContextAbstract : Inherits DbContext
+    Partial Public MustInherit Class ContextAbstract : Inherits DbContext
 
         Private cnn As New ConnectionString
         Private asm As Assembly = Nothing

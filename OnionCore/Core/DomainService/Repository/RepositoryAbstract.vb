@@ -7,10 +7,10 @@ Namespace DomainService.Repository
     Public Class RepositoryAbstract(Of TEntity As {IEntityBase, Class})
         Implements IRepository(Of TEntity)
 
-        Private _context As DbContextAbstract
+        Private _context As ContextAbstract
         Private _dbSet As DbSet(Of TEntity)
 
-        Sub New(databasecontext As DbContextAbstract)
+        Sub New(databasecontext As ContextAbstract)
             _context = databasecontext
             _dbSet = _context.Set(Of TEntity)
         End Sub
