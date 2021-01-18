@@ -12,7 +12,7 @@ Namespace DomainService.SqlService
 
         Sub New()
             MyBase.New()
-            asm = If(asm, Assembly.GetExecutingAssembly)
+            asm = Assembly.GetExecutingAssembly
             Database.EnsureCreated()
         End Sub
         Sub New(connectionstring As ConnectionString)

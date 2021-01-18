@@ -29,18 +29,27 @@ Namespace DomainService.SqlService
                 RaiseEvent FileNotFound(Me, fn, Nothing)
                 Exit Sub
             End If
-            Using fs As FileStream = New FileStream(fn, FileMode.OpenOrCreate)
-                Dim Items As T()
-                Try
-                    Items = Await JsonSerializer.DeserializeAsync(Of T())(fs)
-                    builder.HasData(Items)
-                Catch ex As Exception
-                    Items = Nothing
-                    RaiseEvent FileIsIncorrect(Me, fn, ex)
-                End Try
-            End Using
+
+            If LevelInitialValidation(Of T)() = 0 Then
+                Using fs As FileStream = New FileStream(fn, FileMode.OpenOrCreate)
+                    Dim Items As T()
+                    Try
+                        Items = Await JsonSerializer.DeserializeAsync(Of T())(fs)
+                        builder.HasData(Items)
+                    Catch ex As Exception
+                        Items = Nothing
+                        RaiseEvent FileIsIncorrect(Me, fn, ex)
+                    End Try
+                    Console.WriteLine($"{builder.GetType.Name}")
+                End Using
+            End If
+
         End Sub
 
+        Private Function LevelInitialValidation(Of TT)() As Integer
+            Dim check As New EntityLevelInitialAttribute
+            Return If(GetType(TT).GetCustomAttributes(False).FirstOrDefault(Function(e) e.GetType.Equals(check.GetType)), New EntityLevelInitialAttribute(0))
+        End Function
 
         Delegate Sub FileIsIncorrectEventHandler(sender As Object, filename As String, innerexception As JsonException)
         Delegate Sub FileNotFoundEventHandler(sender As Object, filename As String, innerexception As FileNotFoundException)
