@@ -1,0 +1,11 @@
+[
+{"Id": 1,"Name": "Process call"},
+{"Id": 2,"Name": "Execution"},
+{"Id": 3,"Name": "Runtime crash"},
+{"Id": 4,"Name": "After the process"},
+{"Id": 5,"Name": "Normal ending"},
+{"Id": 6,"Name": "Abnormal ending"},
+{"Id": 7,"Name": "Exit"},
+{"Id": 8,"Name": "Emergency exit"},
+{"Id": 9,"Name": "Cleaning"}
+]

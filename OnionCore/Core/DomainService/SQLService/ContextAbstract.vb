@@ -11,17 +11,6 @@ Namespace DomainService.SqlService
             Not t.IsAbstract AndAlso
             Not t.IsNested)
 
-        'Private Function Entities() As IQueryable(Of TypeInfo)
-
-        '    Dim ents As IQueryable(Of TypeInfo) = asm.DefinedTypes.Where(ImplementedInterfacesPredicateAny).AsQueryable
-        '    For Each ent In ents
-        '        Console.WriteLine($"{ent.Namespace}: {ent.Name}")
-        '    Next
-
-        '    Return ents
-
-        'End Function
-
         Protected Overrides Sub OnModelCreating(modelBuilder As ModelBuilder)
             MyBase.OnModelCreating(modelBuilder)
 
@@ -39,5 +28,7 @@ Namespace DomainService.SqlService
         End Sub
 
     End Class
+
+
 
 End Namespace

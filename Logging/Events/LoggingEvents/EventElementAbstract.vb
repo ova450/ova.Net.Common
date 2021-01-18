@@ -1,4 +1,5 @@
-﻿Imports Microsoft.Extensions.Logging
+﻿Imports System.ComponentModel.DataAnnotations.Schema
+Imports Microsoft.Extensions.Logging
 Imports ova.Common.Core.Domain.Model
 
 Namespace Model.Abstract
@@ -8,10 +9,13 @@ Namespace Model.Abstract
         Public Property Id As Integer Implements IEntityBase.Id
         Public Property Name As String Implements IEntity.Name
 
-        Public Property Code As Integer
+        <NotMapped>
+        Public Property LocalName As String
 
-        Public Function EventId() As EventId
-            Return New EventId(Code, Name)
+        'Public Property Code As Integer
+
+        Public Overridable Function EventId() As EventId
+            Return New EventId(Id, Name)
         End Function
 
     End Class

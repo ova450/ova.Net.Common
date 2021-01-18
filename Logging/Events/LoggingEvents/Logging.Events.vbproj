@@ -14,10 +14,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ova.Net.Common.EntityFramework.Onion.Core" Version="4.4.10.39" />
+    <None Remove="initial\EventObjectInitial.json~RF122ccc74.TMP" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ova.Net.Common.EntityFramework.Onion.Core" Version="4.5.0.40" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\OnionCore\Core\Core.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="initial\EventFullElementInitial.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="initial\EventObjectInitial.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

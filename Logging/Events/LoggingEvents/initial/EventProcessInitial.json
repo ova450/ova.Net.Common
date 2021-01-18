@@ -1,0 +1,11 @@
+[
+{"Id": 1, "Name":"Start"},
+{"Id": 2, "Name":"Stop"},
+{"Id": 3, "Name":"Pause"},
+{"Id": 4, "Name":"Restart"},
+{"Id": 5, "Name":"Begin"},
+{"Id": 6, "Name":"End"},
+{"Id": 7, "Name":"Entry"},
+{"Id": 8, "Name":"Exit"},
+{"Id": 9, "Name":"Clean"}
+]
