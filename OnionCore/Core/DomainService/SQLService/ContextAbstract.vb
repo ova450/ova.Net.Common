@@ -36,7 +36,7 @@ Namespace DomainService.SqlService
             Not t.IsAbstract AndAlso
             Not t.IsNested)
 
-        Protected Overrides Async Sub OnModelCreating(modelBuilder As ModelBuilder)
+        Protected Overrides Sub OnModelCreating(modelBuilder As ModelBuilder)
             MyBase.OnModelCreating(modelBuilder)
             modelBuilder.ApplyConfigurationsFromAssembly(asm)
             For Each definetype As Type In asm.DefinedTypes.Where(ImplementedInterfacesPredicateAny).AsQueryable
