@@ -5,10 +5,11 @@ Imports ova.Common.Core.DomainService.SqlService
 
 Namespace DomainService.Repository
     Public Class RepositoryAbstract(Of TEntity As {IEntityBase, Class})
-        Implements IRepository(Of TEntity)
+        Implements IRepository(Of TEntity), IDisposable
 
         Private _context As ContextAbstract
         Private _dbSet As DbSet(Of TEntity)
+        Private disposedValue As Boolean
 
         Sub New(databasecontext As ContextAbstract)
             _context = databasecontext
@@ -82,6 +83,35 @@ Namespace DomainService.Repository
 
         Public Async Sub SaveAsync() 'As Task(Of IQueryable(Of TEntity))
             Await _context.SaveChangesAsync(True)
+        End Sub
+#End Region
+
+#Region "Dispose"
+        Protected Overridable Sub Dispose(disposing As Boolean)
+            If Not disposedValue Then
+                If disposing Then
+                    ' TODO: освободить управляемое состояние (управляемые объекты)
+                    _dbSet = Nothing
+                End If
+
+                ' TODO: освободить неуправляемые ресурсы (неуправляемые объекты) и переопределить метод завершения
+                ' TODO: установить значение NULL для больших полей
+                _context.Dispose
+                disposedValue = True
+            End If
+        End Sub
+
+        ' ' TODO: переопределить метод завершения, только если "Dispose(disposing As Boolean)" содержит код для освобождения неуправляемых ресурсов
+        Protected Overrides Sub Finalize()
+            ' Не изменяйте этот код. Разместите код очистки в методе "Dispose(disposing As Boolean)".
+            Dispose(disposing:=False)
+            MyBase.Finalize()
+        End Sub
+
+        Public Sub Dispose() Implements IDisposable.Dispose
+            ' Не изменяйте этот код. Разместите код очистки в методе "Dispose(disposing As Boolean)".
+            Dispose(disposing:=True)
+            GC.SuppressFinalize(Me)
         End Sub
 #End Region
 

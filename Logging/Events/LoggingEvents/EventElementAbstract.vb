@@ -1,4 +1,4 @@
-﻿Imports System.ComponentModel.DataAnnotations.Schema
+﻿Imports System.ComponentModel.DataAnnotations
 Imports Microsoft.Extensions.Logging
 Imports ova.Common.Core.Domain.Model
 
@@ -6,11 +6,14 @@ Namespace Model.Abstract
 
     Public MustInherit Class EventElementAbstract : Implements IEntity
 
-        Public Property Id As Integer Implements IEntityBase.Id
+
+        'Public Property Id As Integer Implements IEntityBase.Id
         Public Property Name As String Implements IEntity.Name
 
-        <NotMapped>
-        Public Property LocalName As String
+        <Required>
+        Public Property Id As Integer Implements IEntityBase.Id
+        '<NotMapped>
+        'Public Property LocalName As String
 
         'Public Property Code As Integer
 

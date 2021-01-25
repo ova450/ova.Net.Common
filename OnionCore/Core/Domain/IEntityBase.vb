@@ -1,4 +1,6 @@
 ﻿
+Imports System.ComponentModel.DataAnnotations
+
 Namespace Domain.Model
 
     Public Interface IEntityBase

@@ -11,20 +11,20 @@ Namespace Data.Repository
 
     End Class
 
-    Public Class EventProcessRepository : Inherits RepositoryAbstract(Of EventProcess)
+    'Public Class EventProcessRepository : Inherits RepositoryAbstract(Of EventProcess)
 
-        Sub New(databasecontext As Context)
-            MyBase.New(databasecontext)
-        End Sub
+    '    Sub New(databasecontext As Context)
+    '        MyBase.New(databasecontext)
+    '    End Sub
 
-    End Class
+    'End Class
 
-    Public Class EventStageRepository : Inherits RepositoryAbstract(Of EventStage)
+    'Public Class EventStageRepository : Inherits RepositoryAbstract(Of EventStage)
 
-        Sub New(databasecontext As Context)
-            MyBase.New(databasecontext)
-        End Sub
+    '    Sub New(databasecontext As Context)
+    '        MyBase.New(databasecontext)
+    '    End Sub
 
-    End Class
+    'End Class
 
 End Namespace
