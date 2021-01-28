@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.vbproj" />
+    <PackageReference Include="ova.Net.Common.EntityFramework.Onion.Core" Version="4.6.0.41" />
   </ItemGroup>
 
   <ItemGroup>

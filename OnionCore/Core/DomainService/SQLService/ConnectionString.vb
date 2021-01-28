@@ -1,9 +1,4 @@
-﻿
-
-Imports System.Reflection
-Imports Microsoft.EntityFrameworkCore
-
-Namespace DomainService.SqlService
+﻿Namespace DomainService.SqlService
 
     Public Class ConnectionString
         Public dbname As String = "dbTest"

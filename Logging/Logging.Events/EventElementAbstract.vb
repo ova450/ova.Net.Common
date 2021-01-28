@@ -1,20 +1,14 @@
 ﻿Imports Microsoft.Extensions.Logging
-Imports ova.Common.Core.Domain
+Imports ova.Common.Core.Domain.Model
 
-Namespace Events.Model
-
-
+Namespace Model.Abstract
 
     Public MustInherit Class EventElementAbstract : Implements IEntity
-
-
-        Public Code As Integer
-
         Public Property Id As Integer Implements IEntityBase.Id
         Public Property Name As String Implements IEntity.Name
 
-        Public Function EventId() As EventId
-            Return New EventId(Code, Name)
+        Public Overridable Function EventId() As EventId
+            Return New EventId(Id, Name)
         End Function
 
     End Class

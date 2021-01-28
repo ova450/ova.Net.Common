@@ -9,4 +9,4 @@
 
 'End Class
 
-Public Class Class11Config : Inherits EntityConfigAbstract(Of Class11) : End Class
+'Public Class Class11Config : Inherits EntityConfigAbstract(Of Class11) : End Class

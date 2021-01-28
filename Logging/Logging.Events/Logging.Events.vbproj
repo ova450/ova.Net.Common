@@ -6,7 +6,7 @@
     <AssemblyName>ova.Net.Common.Logging.Events</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.1.2</Version>
+    <Version>1.1.0.3</Version>
     <Authors>ovaataaridotru</Authors>
     <Copyright>ovaataaridotru</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -18,11 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ova.Net.Common.EntityFramework.Onion.Core" Version="4.5.0.40" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\OnionCore\Core\Core.vbproj" />
+    <PackageReference Include="ova.Net.Common.EntityFramework.Onion.Core" Version="4.6.0.41" />
   </ItemGroup>
 
   <ItemGroup>

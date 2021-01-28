@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LoggingEvents\Logging.Events.vbproj" />
+    <PackageReference Include="ova.Net.Common.Logging.Events" Version="1.1.0.3" />
   </ItemGroup>
 
 </Project>

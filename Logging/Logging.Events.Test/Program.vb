@@ -1,11 +1,4 @@
-Imports System.IO
-Imports System.Text.Json
-Imports Microsoft.EntityFrameworkCore
-Imports Microsoft.EntityFrameworkCore.Metadata.Builders
-Imports Microsoft.EntityFrameworkCore.Metadata.Internal
-Imports ova.Common.Core.Domain.Model
 Imports ova.Common.Logging.Events.Data
-Imports ova.Common.Logging.Events.Model
 
 Module Program
     Sub Main(args As String())
@@ -52,18 +45,18 @@ Module Program
         End Using
     End Sub
 
-    Private Async Function ReadAsync(filename As String) As Task(Of EventObject())
-        Using fs As FileStream = New FileStream(filename, FileMode.OpenOrCreate)
-            Dim type As Type = GetType(EventObject())
-            Try
-                Return Await JsonSerializer.DeserializeAsync(fs, type)
-            Catch ex As JsonException
-                Console.WriteLine($"File EventObjectInitial incorrect")
-                Console.WriteLine(ex.Message)
-            Catch ex As Exception
-                Console.WriteLine(ex.Message)
-            End Try
-        End Using
-    End Function
+    'Private Async Function ReadAsync(filename As String) As Task(Of EventObject())
+    '    Using fs As FileStream = New FileStream(filename, FileMode.OpenOrCreate)
+    '        Dim type As Type = GetType(EventObject())
+    '        Try
+    '            Return Await JsonSerializer.DeserializeAsync(fs, type)
+    '        Catch ex As JsonException
+    '            Console.WriteLine($"File EventObjectInitial incorrect")
+    '            Console.WriteLine(ex.Message)
+    '        Catch ex As Exception
+    '            Console.WriteLine(ex.Message)
+    '        End Try
+    '    End Using
+    'End Function
 
 End Module

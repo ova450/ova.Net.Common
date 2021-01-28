@@ -1,17 +1,13 @@
-﻿Imports Microsoft.EntityFrameworkCore.Metadata.Builders
-Imports ova.Common.Core.DomainService.SqlService
+﻿Imports Microsoft.EntityFrameworkCore
+Imports Microsoft.EntityFrameworkCore.Metadata.Builders
 
-Public Class BookConfig : Inherits EntityConfigAbstract(Of Book)
-    'Sub New()
-    '    MyBase.New : End Sub
+Public Class BookConfig : Implements IEntityTypeConfiguration(Of Book)
 
-    Public Overrides Sub Relations(builder As EntityTypeBuilder(Of Book))
-
+    Public Sub Configure(builder As EntityTypeBuilder(Of Book)) Implements IEntityTypeConfiguration(Of Book).Configure
         builder.
             HasOne(Function(a) a.Author).
             WithMany(Function(b) b.Books).
             HasForeignKey(Function(f) f.AuthorId).
-            OnDelete(Microsoft.EntityFrameworkCore.DeleteBehavior.Cascade)
+            OnDelete(DeleteBehavior.Cascade)
     End Sub
-
 End Class

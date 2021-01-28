@@ -4,6 +4,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>CoreSqlDatabaseTestingConsole</RootNamespace>
     <TargetFramework>net5.0</TargetFramework>
+    <AnalysisLevel>5.0</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,17 +13,24 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="EntitiesConfig.vb~RF4222ab38.TMP" />
     <None Remove="Interfaces.vb~RF2f73e0ef.TMP" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ova.Net.Common.EntityFramework.Onion.Core" Version="4.3.2.28" />
+    <ProjectReference Include="..\Model1\Model1.vbproj" />
+    <ProjectReference Include="..\Model2\Model2.vbproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.vbproj" />
-    <ProjectReference Include="..\Model1\Model1.vbproj" />
-    <ProjectReference Include="..\Model2\Model2.vbproj" />
+    <Import Include="ova.Common.Core.Domain.Model" />
+    <Import Include="ova.Common.Core.Domain.Navigation" />
+    <Import Include="ova.Common.Core.DomainService.Repository" />
+    <Import Include="ova.Common.Core.DomainService.SqlService" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ova.Net.Common.EntityFramework.Onion.Core" Version="4.6.0.41" />
   </ItemGroup>
 
 </Project>

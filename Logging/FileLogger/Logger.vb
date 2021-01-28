@@ -1,11 +1,7 @@
-Imports Microsoft.Extensions.Logging
-Imports ova.Common.DbLogging.Abstract
-Imports ova.Common.Logging.Abstract
-Imports ova.Common.Logging.Entry
+﻿Imports Microsoft.Extensions.Logging
+Imports ova.Common.Logging.Shared
 
-Friend Class LoggerAbstract : Implements ILogger
-    Public Property Provider As LoggerProvider
-    Public Property Category As String
+Friend Class Logger : Implements ILogger
 
     Public Sub New(ByVal Provider As LoggerProvider, ByVal Category As String)
         Me.Provider = Provider
@@ -13,38 +9,38 @@ Friend Class LoggerAbstract : Implements ILogger
     End Sub
 
     Private Function BeginScope(Of TState)(ByVal state As TState) As IDisposable Implements ILogger.BeginScope
-        Return Provider.GetScopeProvider.Push(state)
+        Return Nothing
+        'Return Provider.ScopeProvider.Push(state)
     End Function
 
     Private Function IsEnabled(ByVal logLevel As LogLevel) As Boolean Implements ILogger.IsEnabled
         Return Provider.IsEnabled(logLevel)
     End Function
 
-    Friend Sub Log(Of TState)(ByVal logLevel As LogLevel, ByVal eventId As EventId, ByVal exception As Exception, ByVal formatter As Func(Of TState, Exception, String))
-
-        'Dim Properties As IEnumerable(Of KeyValuePair(Of String, Object)) = Nothing, props As IEnumerable(Of KeyValuePair(Of String, Object)) = Nothing
+    Private Sub Log(Of TState)(ByVal logLevel As LogLevel, ByVal eventId As EventId, ByVal state As TState, ByVal exception As Exception, ByVal formatter As Func(Of TState, Exception, String)) Implements ILogger.Log
+        Dim Properties As IEnumerable(Of KeyValuePair(Of String, Object)) = Nothing, props As IEnumerable(Of KeyValuePair(Of String, Object)) = Nothing
 
         If (TryCast(Me, ILogger)).IsEnabled(logLevel) Then
             Dim Info As LogEntry = New LogEntry()
             Info.Category = Me.Category
             Info.Level = logLevel
-            Info.Message = Message     '  If(exception?.Message, state.ToString())
+            Info.Message = If(exception?.Message, state.ToString())
             Info.Exception = exception
             Info.EventId = eventId
-            'Info.State = state
+            Info.State = state
 
-            'If TypeOf state Is String Then
-            '    Info.StateText = state.ToString()
-            'ElseIf TypeOf state Is IEnumerable(Of KeyValuePair(Of String, Object)) Then
+            If TypeOf state Is String Then
+                Info.StateText = state.ToString()
+            ElseIf TypeOf state Is IEnumerable(Of KeyValuePair(Of String, Object)) Then
 
-            '    Info.StateProperties = If(Info.StateProperties, New Dictionary(Of String, Object))
+                Info.StateProperties = If(Info.StateProperties, New Dictionary(Of String, Object))
 
-            '    If Properties IsNot Nothing Then
-            '        For Each item As KeyValuePair(Of String, Object) In Properties
-            '            Info.StateProperties(item.Key) = item.Value
-            '        Next
-            '    End If
-            'End If
+                If Properties IsNot Nothing Then
+                    For Each item As KeyValuePair(Of String, Object) In Properties
+                        Info.StateProperties(item.Key) = item.Value
+                    Next
+                End If
+            End If
 
             'If Provider.ScopeProvider IsNot Nothing Then
             '    Provider.ScopeProvider.ForEachScope(Sub(value, loggingProps)
@@ -69,5 +65,8 @@ Friend Class LoggerAbstract : Implements ILogger
         End If
     End Sub
 
+    Public Property Provider As LoggerProvider
+    Public Property Category As String
 
 End Class
+
