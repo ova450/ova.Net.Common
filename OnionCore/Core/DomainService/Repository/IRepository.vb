@@ -1,4 +1,5 @@
 ﻿Imports System.Reflection
+Imports System.Threading
 Imports ova.Common.Core.Domain.Model
 
 Namespace DomainService.Repository
@@ -38,22 +39,33 @@ Namespace DomainService.Repository
 
         Function GetItem(id As Integer) As TEntity
         Function GetItemAsync(id As Integer) As Task(Of TEntity)
+        Function GetItemAsync(id As Integer, Optional token As CancellationToken = Nothing) As Task(Of TEntity)
 
-        Function Count() As Long
+        Function Count() As Integer
+        Function CountAsync() As Task(Of Integer)
+        Function CountAsync(Optional token As CancellationToken = Nothing) As Task(Of Integer)
+        Function CountLong() As Long
+        Function CountLongAsync() As Task(Of Long)
+        Function CountLongAsync(Optional token As CancellationToken = Nothing) As Task(Of Long)
+
 
         ' Add
         Function Add(entity As TEntity) As IQueryable(Of TEntity)
         Function AddAsync(entity As TEntity) As Task(Of IQueryable(Of TEntity))
+        Function AddAsync(entity As TEntity, Optional token As CancellationToken = Nothing) As Task(Of IQueryable(Of TEntity))
 
         ' Remove
         Function Remove(id As Integer) As IQueryable(Of TEntity)
         Function Remove(entity As TEntity) As IQueryable(Of TEntity)
         Function RemoveAsync(id As Integer) As Task(Of IQueryable(Of TEntity))
+        Function RemoveAsync(id As Integer, Optional token As CancellationToken = Nothing) As Task(Of IQueryable(Of TEntity))
         Function RemoveAsync(entity As TEntity) As Task(Of IQueryable(Of TEntity))
+        Function RemoveAsync(entity As TEntity, Optional token As CancellationToken = Nothing) As Task(Of IQueryable(Of TEntity))
 
         ' Update
         Function Update(entity As TEntity) As IQueryable(Of TEntity)
         Function UpdateAsync(entity As TEntity) As Task(Of IQueryable(Of TEntity))
+        Function UpdateAsync(entity As TEntity, Optional token As CancellationToken = Nothing) As Task(Of IQueryable(Of TEntity))
 
     End Interface
 End Namespace

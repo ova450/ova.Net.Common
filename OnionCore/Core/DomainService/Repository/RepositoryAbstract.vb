@@ -1,4 +1,5 @@
-﻿Imports Microsoft.EntityFrameworkCore
+﻿Imports System.Threading
+Imports Microsoft.EntityFrameworkCore
 Imports ova.Common.Core.Domain.Model
 Imports ova.Common.Core.DomainService.SqlService
 
@@ -27,41 +28,63 @@ Namespace DomainService.Repository
             Return Await _dbSet.FirstOrDefaultAsync(Function(p) p.Id = id)
         End Function
 
-        Public Function Count() As Long Implements IRepository(Of TEntity).Count
-            Return _dbSet.Count
+        Public Async Function GetItemAsync(id As Integer, Optional token As CancellationToken = Nothing) As Task(Of TEntity) Implements IRepository(Of TEntity).GetItemAsync
+            Return Await _dbSet.FirstOrDefaultAsync(Function(p) p.Id = id, token)
         End Function
 
-        Public Async Function CountAsync() As Task(Of Long)
-            Return Await _dbSet.CountAsync
+
+        Public Function Count() As Integer Implements IRepository(Of TEntity).Count
+            Return _dbSet.LongCount()
+        End Function
+        Public Async Function CountAsync() As Task(Of Integer) Implements IRepository(Of TEntity).CountAsync
+            Return Await _dbSet.LongCountAsync()
+        End Function
+        Public Async Function CountAsync(Optional token As CancellationToken = Nothing) As Task(Of Integer) Implements IRepository(Of TEntity).CountAsync
+            Return Await _dbSet.CountAsync(token)
+        End Function
+        Public Function CountLong() As Long Implements IRepository(Of TEntity).CountLong
+            Return _dbSet.LongCount()
+        End Function
+        Public Async Function CountLongAsync() As Task(Of Long) Implements IRepository(Of TEntity).CountLongAsync
+            Return Await _dbSet.LongCountAsync()
+        End Function
+        Public Async Function CountLongAsync(Optional token As CancellationToken = Nothing) As Task(Of Long) Implements IRepository(Of TEntity).CountLongAsync
+            Return Await _dbSet.CountAsync(token)
         End Function
 
         Public Function Add(entity As TEntity) As IQueryable(Of TEntity) Implements IRepository(Of TEntity).Add
             _dbSet.Add(entity)
             Return _dbSet
         End Function
-
         Public Async Function AddAsync(entity As TEntity) As Task(Of IQueryable(Of TEntity)) Implements IRepository(Of TEntity).AddAsync
-            Await _dbSet.AddAsync(entity, Nothing)
-            Return _dbSet
+            Return Await _dbSet.AddAsync(entity)
+        End Function
+        Public Async Function AddAsync(entity As TEntity, Optional token As CancellationToken = Nothing) As Task(Of IQueryable(Of TEntity)) Implements IRepository(Of TEntity).AddAsync
+            Return Await _dbSet.AddAsync(entity, token)
         End Function
 
         Public Function Remove(entity As TEntity) As IQueryable(Of TEntity) Implements IRepository(Of TEntity).Remove
             _dbSet.Remove(entity)
             Return _dbSet
         End Function
-
         Public Function Remove(id As Integer) As IQueryable(Of TEntity) Implements IRepository(Of TEntity).Remove
             _dbSet.Remove(GetItem(id))
             Return _dbSet
         End Function
-
         Public Async Function RemoveAsync(id As Integer) As Task(Of IQueryable(Of TEntity)) Implements IRepository(Of TEntity).RemoveAsync
             Await Task.Run(Function() Remove(id))
             Return _dbSet
         End Function
-
+        Public Async Function RemoveAsync(id As Integer, Optional token As CancellationToken = Nothing) As Task(Of IQueryable(Of TEntity)) Implements IRepository(Of TEntity).RemoveAsync
+            Await Task.Run(Function() Remove(id), token)
+            Return _dbSet
+        End Function
         Public Async Function RemoveAsync(entity As TEntity) As Task(Of IQueryable(Of TEntity)) Implements IRepository(Of TEntity).RemoveAsync
             Await Task.Run(Function() Remove(entity))
+            Return _dbSet
+        End Function
+        Public Async Function RemoveAsync(entity As TEntity, Optional token As CancellationToken = Nothing) As Task(Of IQueryable(Of TEntity)) Implements IRepository(Of TEntity).RemoveAsync
+            Await Task.Run(Function() Remove(entity), token)
             Return _dbSet
         End Function
 
@@ -69,9 +92,12 @@ Namespace DomainService.Repository
             _dbSet.Update(entity)
             Return _dbSet
         End Function
-
         Public Async Function UpdateAsync(entity As TEntity) As Task(Of IQueryable(Of TEntity)) Implements IRepository(Of TEntity).UpdateAsync
             Await Task.Run(Function() Update(entity))
+            Return _dbSet
+        End Function
+        Public Async Function UpdateAsync(entity As TEntity, Optional token As CancellationToken = Nothing) As Task(Of IQueryable(Of TEntity)) Implements IRepository(Of TEntity).UpdateAsync
+            Await Task.Run(Function() Update(entity), token)
             Return _dbSet
         End Function
 
