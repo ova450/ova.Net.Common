@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>ova.Common.UnixTime</RootNamespace>
+    <RootNamespace>ova.сommon.UnixTime</RootNamespace>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyName>ova.Net.Common.UnixTime</AssemblyName>
+    <AssemblyName>ova.Net.сommon.UnixTime</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Product>UnixTime</Product>
     <Authors>ovaataaridotru</Authors>
     <Copyright>ovaataaridotru</Copyright>
-    <Version>3.0.0.10</Version>
+    <Version>3.0.1.11</Version>
     <Description>The package provides functionality for converting Coordinated Universal Time (UTC) to Unix Time and backward.</Description>
     <RepositoryUrl></RepositoryUrl>
     <PackageProjectUrl></PackageProjectUrl>

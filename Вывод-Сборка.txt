@@ -1,3 +1,0 @@
-﻿Очистка начата…
-1>Ошибка: Не удалось завершить операцию. The data necessary to complete this operation is not yet available. 
-========== Очистка: успешно: 0, с ошибками: 1, пропущено: 0 ==========
